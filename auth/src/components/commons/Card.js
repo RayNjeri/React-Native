@@ -22,4 +22,4 @@ const Card = props => {
   return <View style={styles.containerStyle}>{props.children}</View>;
 };
 
-export default Card;
+export { Card };

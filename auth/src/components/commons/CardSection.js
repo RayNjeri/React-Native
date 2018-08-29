@@ -17,4 +17,4 @@ const CardSection = props => {
   return <View style={styles.containerStyle}>{props.children}</View>;
 };
 
-export default CardSection;
+export { CardSection };
