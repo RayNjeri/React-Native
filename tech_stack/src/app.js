@@ -5,12 +5,14 @@ import { View } from 'react-native';
 
 import reducers from './reducers';
 import { Header } from './components/common';
+import LibraryList from './components/LibraryList';
 
 const App = () => {
   return (
     <Provider store={createStore(reducers)}>
       <View>
         <Header headerText="TechStack" />
+        <LibraryList />
       </View>
     </Provider>
   );
