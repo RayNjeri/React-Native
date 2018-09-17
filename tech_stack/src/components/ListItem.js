@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableWithoutFeedback } from 'react-native';
+import {
+  Text,
+  View,
+  TouchableWithoutFeedback,
+  LayoutAnimation
+} from 'react-native';
 import { connect } from 'react-redux';
 
 import { CardSection } from './common';
@@ -13,10 +18,24 @@ const styles = {
 };
 
 class ListItem extends Component {
+  componentWillUpdate() {
+    LayoutAnimation.spring();
+  }
+
   renderDescription() {
     const { expanded } = this.props;
     if (expanded) {
-      return <Text>{this.props.library.item.description}</Text>;
+      return (
+        <CardSection>
+          <Text
+            style={{
+              flex: 1
+            }}
+          >
+            {this.props.library.item.description}
+          </Text>
+        </CardSection>
+      );
     }
   }
 
